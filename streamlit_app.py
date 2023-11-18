@@ -2,7 +2,7 @@ import streamlit as st
 import os
 
 model_file = 'model.pkl'
-if os.path.exists(model_file)
+if os.path.exists(model_file):
     model = pickle.load(open('model.pkl','rb'))
 else:
     print(f"Error: File {model_file} not found.")
