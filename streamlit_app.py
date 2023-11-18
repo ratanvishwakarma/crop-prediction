@@ -1,5 +1,6 @@
 import streamlit as st
 import pickle 
+import numpy as np
 
 st.markdown("<h1 style='text-align: center;'>AMAA</h1>", unsafe_allow_html=True)
 st.markdown("<h3 style='text-align: center; color: grey;'>CROP PREDICTION SYSTEM🌱</h3>", unsafe_allow_html=True)
