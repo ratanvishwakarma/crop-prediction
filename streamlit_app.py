@@ -1,12 +1,10 @@
 import streamlit as st
+import pickle 
 import os
 
-model_file = 'model.pkl'
-if os.path.exists(model_file):
-    model = pickle.load(open('model.pkl','rb'))
-else:
-    print(f"Error: File {model_file} not found.")
-    
+model_file = os.path.join(os.getcwd(), 'model.pkl')
+model = pickle.load(open('model.pkl','rb'))
+
 st.markdown("<h1 style='text-align: center;'>AMAA</h1>", unsafe_allow_html=True)
 st.markdown("<h3 style='text-align: center; color: grey;'>CROP PREDICTION SYSTEM🌱</h3>", unsafe_allow_html=True)
 
@@ -26,3 +24,4 @@ if btn:
     pred = np.array([*pred])
     print(pred)
     st.subheader(*pred)
+
