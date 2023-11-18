@@ -2,7 +2,8 @@ import streamlit as st
 import pickle 
 import numpy as np
 import pandas as pd
-import scikit-learn
+from sklearn.linear_model import LogisticRegression
+import sklearn
 
 model = pickle.load(open('model.pkl','rb'))
 
