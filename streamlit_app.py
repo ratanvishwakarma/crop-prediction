@@ -1,7 +1,12 @@
 import streamlit as st
+import os
 
-model = pickle.load(open('model.pkl','rb'))
-
+model_file = 'model.pkl'
+if os.path.exists(model_file)
+    model = pickle.load(open('model.pkl','rb'))
+else:
+    print(f"Error: File {model_file} not found.")
+    
 st.markdown("<h1 style='text-align: center;'>AMAA</h1>", unsafe_allow_html=True)
 st.markdown("<h3 style='text-align: center; color: grey;'>CROP PREDICTION SYSTEM🌱</h3>", unsafe_allow_html=True)
 
