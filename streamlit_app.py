@@ -14,7 +14,7 @@ P = float(st.number_input('Phosphorus', 0,100))
 K = float(st.number_input('Potassium', 0,100))
 temperature = float(st.number_input('Temperature', 0,100))
 humidity = float(st.number_input('Humidity', 0,100))
-ph = float(st.number_input('Ph', 0,100))
+ph = float(st.number_input('Ph', 0,10))
 
 btn = st.button("Crop Prediction")
 
