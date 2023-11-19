@@ -19,7 +19,7 @@ ph = float(st.number_input('Ph', 0,100))
 btn = st.button("Crop Prediction")
 
 if btn:
-    pred = model(np.array([N,P,K,temperature,humidity,ph]).reshape(1,-1))
+    pred = model.predict(np.array([N,P,K,temperature,humidity,ph]).reshape(1,-1))
     print(pred)
     print(np.array(pred))
     pred = np.array([*pred])
