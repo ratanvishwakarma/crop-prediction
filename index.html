@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AMAA DEMO</title>
+  </head>
+  <style>
+    h1 {
+        color: mediumseagreen;
+        text-align: center;
+    }
+
+    .warning {
+        color: red;
+        font-weight: bold;
+        text-align: center;
+    }
+    .card{
+    margin-left:410px;
+    margin-top: 20px;
+    color: white;
+    }
+    .container{
+    background:#edf2f7;
+    font-weight: bold;
+    padding-bottom:10px;
+    border-radius: 15px;
+    }
+</style>
+    <body style="background:#BCBBB8">
+    <div class="container my-3 mt-3">
+      <h1 class="text-success"><marquee> AMAA </marquee></h1>
+      <h1 class="text-success">Crop Recommendation System <span class="text-success">🌱</span></h1>
+        
+      <form action='/predict' method="POST">
+            <div class="col-md-4">       
+                    Nitrogen:<input type = 'text' name = 'N' placeholder="Enter Nitrogen value"><br>     
+                    Phosporus:<input type = 'text' name = 'P' placeholder="Enter Phosporus value"><br>
+                    Potassium:<input type = 'text' name = 'K' placeholder="Enter Potassium value"><br>
+                    Temperature:<input type = 'text' name = 'temperature' placeholder="Enter temperature value"><br>
+                    Humidity:<input type = 'text' name = 'humidity' placeholder="Enter humidity value"><br>
+                    pH:<input type = 'text' name = 'ph' placeholder="Enter pH value">
+                </div> <br>
+            <div class="col-md-4">
+                    class:{{result}}
+                </div><br>
+            <div class="col-md-2">
+				    <input type='submit' value='Get Recommendation'> </div>
+      </form>
+      <h5><marquee> Group member:  Abhishek,  Mangesh,  Akshata,  Aryan </marquee></h5>
+    </body>
+</html>
