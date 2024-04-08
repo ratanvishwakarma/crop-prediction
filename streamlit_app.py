@@ -35,10 +35,13 @@ if btn:
 st.subheader("Crop Details:")
 # Define your crop details here as a dictionary
 crop_details = {
-    'Crop': ['Crop A', 'Crop B', 'Crop C'],  # Example crop names
-    'Detail 1': ['Detail A1', 'Detail B1', 'Detail C1'],  # Example details
-    'Detail 2': ['Detail A2', 'Detail B2', 'Detail C2'],  # Example details
-    # Add more details columns as needed
+    'Crop': ['Apple', 'Banana', 'Blackgram'],  # Example crop names
+    'Nitrogen': ['0 - 40', '80 - 120', '20 - 60'],  # Example details
+    'Phosphorus': ['120 - 145', '70 - 95', '55 - 80'],  # Example details
+    'Potassium': ['195 - 205', '45 - 55', '15 - 25'],
+    'Temperature': ['21 - 24', '25 - 30', '25 - 35'],
+    'Humidity': ['90 - 95', '75 - 85', '60 - 70'],
+    'Ph': ['5 - 6.5', '5 - 6.5', '6 - 8'],
 }
 crop_details_df = pd.DataFrame(crop_details)
 # Display the crop details in a table
