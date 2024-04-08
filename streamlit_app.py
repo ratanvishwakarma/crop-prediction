@@ -15,6 +15,21 @@ st.markdown("<h3 style='text-align: center; color: grey;'>CROP PREDICTION SYSTEM
 page_options = ["Crop Prediction", "Crop Details"]
 selected_page = st.sidebar.radio("Select Page", page_options)
 
+# Define page options in English and Hindi
+page_options = {
+    'English': ["Crop Prediction", "Crop Details"],
+    'Hindi': ["कृषि की भविष्यवाणी", "कृषि विवरण"]
+}
+
+# Let the user choose the language
+selected_language = st.sidebar.radio("Select Language / भाषा चुनें", list(page_options.keys()))
+
+# Get the selected language's page options
+selected_page_options = page_options[selected_language]
+
+# Let the user choose the page
+selected_page = st.sidebar.radio("Select Page / पृष्ठ चुनें", selected_page_options)
+
 # Define functions for each page
 def crop_prediction():
     # Input fields for user to provide data
