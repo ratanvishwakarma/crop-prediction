@@ -15,6 +15,10 @@ st.markdown("<h3 style='text-align: center; color: grey;'>CROP PREDICTION SYSTEM
 page_options = ["Crop Prediction", "Crop Details"]
 selected_page = st.sidebar.radio("Select Page", page_options)
 
+# Define language options
+language_options = ["English", "Hindi"]
+selected_language = st.sidebar.radio("Select Language", language_options)
+
 # Define functions for each page
 def crop_prediction():
     # Input fields for user to provide data
