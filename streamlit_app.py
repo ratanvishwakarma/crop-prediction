@@ -42,7 +42,7 @@ def crop_details():
     st.subheader("Crop Details:")
     # Define your crop details here as a dictionary
     crop_details = {
-        'Crop': ['Apple', 'Banana', 'Blackgram'],  # Example crop names
+        'Crop': ['Apple', 'Banana', 'Blackgram', 'Chickpea', 'Coconut', 'Coffee', 'Cotton', 'Grapes', 'Jute', 'Kidneybeans', 'lentil', 'Maize', 'Mango', 'Mothbeans', 'Mungbeans', 'Muskmelon', 'Orange', 'Papaya', 'Pigeonpeas', 'Pomegranate', 'Rice', 'Watermelon'],  # Example crop names
         'Nitrogen': ['0 - 40', '80 - 120', '20 - 60'],  # Example details
         'Phosphorus': ['120 - 145', '70 - 95', '55 - 80'],  # Example details
         'Potassium': ['195 - 205', '45 - 55', '15 - 25'],
