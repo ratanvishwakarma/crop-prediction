@@ -29,19 +29,13 @@ def crop_prediction():
     btn = st.button("Predict Crop")
 
     # Perform prediction when the button is clicked
-    if btn:
-        # Make prediction using the loaded model
-        pred = model.predict(np.array([N, P, K, temperature, humidity, ph]).reshape(1,-1))
-        
-        # Assuming pred is an array with probabilities for each crop, and crop_names contains the names of the crops
-        crop_names = ['Crop A', 'Crop B', 'Crop C']  # Example crop names
-        pred = pred[0]  # Assuming pred is an array with probabilities for each crop
-        pred_dict = {'Crop': crop_names, 'Probability': pred}
-        pred_df = pd.DataFrame(pred_dict)
-        
-        # Display the predicted crop probabilities in a table
-        st.subheader("Predicted Crop Probabilities:")
-        st.table(pred_df)
+   if btn:
+    pred = model.predict(np.array([N,P,K,temperature,humidity,ph]).reshape(1,-1))
+    print(pred)
+    print(np.array(pred))
+    pred = np.array([*pred])
+    print(pred)
+    st.subheader(*pred)
 
 def crop_details():
     # Table section
