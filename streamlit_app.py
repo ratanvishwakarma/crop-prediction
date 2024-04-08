@@ -29,13 +29,13 @@ def crop_prediction():
     btn = st.button("Predict Crop")
 
     # Perform prediction when the button is clicked
-if btn:
-    pred = model.predict(np.array([N,P,K,temperature,humidity,ph]).reshape(1,-1))
-    print(pred)
-    print(np.array(pred))
-    pred = np.array([*pred])
-    print(pred)
-    st.subheader(*pred)
+    if btn:
+        pred = model.predict(np.array([N,P,K,temperature,humidity,ph]).reshape(1,-1))
+        print(pred)
+        print(np.array(pred))
+        pred = np.array([*pred])
+        print(pred)
+        st.subheader(*pred)
 
 def crop_details():
     # Table section
