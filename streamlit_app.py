@@ -24,18 +24,12 @@ btn = st.button("Crop Prediction")
 
 # Perform prediction when the button is clicked
 if btn:
-    # Make prediction using the loaded model
-    pred = model.predict(np.array([N, P, K, temperature, humidity, ph]).reshape(1,-1))
-    
-    # Assuming pred is an array with probabilities for each crop, and crop_names contains the names of the crops
-    crop_names = ['Crop A', 'Crop B', 'Crop C']  # Example crop names
-    pred = pred[0]  # Assuming pred is an array with probabilities for each crop
-    pred_dict = {'Crop': crop_names, 'Probability': pred}
-    pred_df = pd.DataFrame(pred_dict)
-    
-    # Display the predicted crop probabilities in a table
-    st.subheader("Predicted Crop Probabilities:")
-    st.table(pred_df)
+    pred = model.predict(np.array([N,P,K,temperature,humidity,ph]).reshape(1,-1))
+    print(pred)
+    print(np.array(pred))
+    pred = np.array([*pred])
+    print(pred)
+    st.subheader(*pred)
 
 # Table section
 st.subheader("Crop Details:")
