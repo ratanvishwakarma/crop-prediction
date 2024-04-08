@@ -11,6 +11,19 @@ model = pickle.load(open('model.pkl','rb'))
 st.markdown("<h1 style='text-align: center;'>AMAA</h1>", unsafe_allow_html=True)
 st.markdown("<h3 style='text-align: center; color: grey;'>CROP PREDICTION SYSTEM🌱</h3>", unsafe_allow_html=True)
 
+# Define language options
+language_options = ["English", "Hindi"]
+
+# Divide the sidebar into two columns
+col1, col2 = st.sidebar.columns(2)
+
+# Place language selection options side by side
+with col1:
+    selected_language = st.radio("Select Language", language_options[:1])
+
+with col2:
+    selected_language = st.radio("Select Language", language_options[1:])
+
 # Define page options
 page_options = ["Crop Prediction", "Crop Details"]
 selected_page = st.sidebar.radio("Select Page", page_options)
