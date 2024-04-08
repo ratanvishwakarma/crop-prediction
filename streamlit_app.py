@@ -19,6 +19,34 @@ selected_language = st.sidebar.radio("Select Language", language_options)
 page_options = ["Crop Prediction", "Crop Details"]
 selected_page = st.sidebar.radio("Select Page", page_options)
 
+# Define function to convert English crop names to Hindi
+def english_to_hindi(english_crop):
+    crop_mapping = {
+        "Apple": "सेब",
+        "Banana": "केला",
+        "Blackgram": "काली उरद",
+        "Chickpea": "चना",
+        "Coconut": "नारियल",
+        "Coffee": "कॉफ़ी",
+        "Cotton": "कपास",
+        "Grapes": "अंगूर",
+        "Jute": "जूट",
+        "Kidneybeans": "राजमा",
+        "lentil": "मसूर",
+        "Maize": "मक्का",
+        "Mango": "आम",
+        "Mothbeans": "मोथ",
+        "Mungbeans": "मूंग",
+        "Muskmelon": "खरबूजा",
+        "Orange": "संतरा",
+        "Papaya": "पपीता",
+        "Pigeonpeas": "अरहर",
+        "Pomegranate": "अनार",
+        "Rice": "चावल",
+        "Watermelon": "तरबूज"
+    }
+    return crop_mapping.get(english_crop, "Unknown")
+
 # Define functions for each page
 def crop_prediction():
     # Input fields for user to provide data
@@ -40,6 +68,11 @@ def crop_prediction():
         pred = np.array([*pred])
         print(pred)
         st.subheader(*pred)
+
+    if selected_language == "Hindi":
+            predicted_crop = english_to_hindi(pred)
+        st.subheader("Predicted Crop:")
+        st.write(predicted_crop)
 
 def crop_details():
     # Table section
