@@ -13,7 +13,10 @@ st.markdown("<h3 style='text-align: center; color: grey;'>CROP PREDICTION SYSTEM
 
 # Define language options
 language_options = ["English", "Hindi"]
-selected_language = st.sidebar.radio("Select Language", language_options)
+
+# Display language options side by side
+col1, col2 = st.sidebar.columns(2)
+selected_language = col1.radio("Select Language", language_options)
 
 # Define page options
 page_options = ["Crop Prediction", "Crop Details"]
