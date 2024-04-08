@@ -69,10 +69,10 @@ def crop_prediction():
         print(pred)
         st.subheader(*pred)
 
-    if selected_language == "Hindi":
+        if selected_language == "Hindi":
             predicted_crop = english_to_hindi(pred)
-        st.subheader("Predicted Crop:")
-        st.write(predicted_crop)
+            st.subheader("Predicted Crop:")
+            st.write(predicted_crop)
 
 def crop_details():
     # Table section
