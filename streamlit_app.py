@@ -65,12 +65,12 @@ def crop_prediction():
 
     # Perform prediction when the button is clicked
 if btn:
-    pred = model.predict(np.array([N,P,K,temperature,humidity,ph]).reshape(1,-1))
-    predicted_crop_index = np.argmax(pred)
-    crop_names = ['Apple', 'Banana', 'Blackgram', 'Chickpea', 'Coconut', 'Coffee', 'Cotton', 'Grapes', 'Jute', 'Kidneybeans', 'lentil', 'Maize', 'Mango', 'Mothbeans', 'Mungbeans', 'Muskmelon', 'Orange', 'Papaya', 'Pigeonpeas', 'Pomegranate', 'Rice', 'Watermelon']
-    predicted_crop = crop_names[predicted_crop_index]
-    if selected_language == "Hindi":
-        predicted_crop = english_to_hindi(predicted_crop)
+        pred = model.predict(np.array([N,P,K,temperature,humidity,ph]).reshape(1,-1))
+        predicted_crop_index = np.argmax(pred)
+        crop_names = ['Apple', 'Banana', 'Blackgram', 'Chickpea', 'Coconut', 'Coffee', 'Cotton', 'Grapes', 'Jute', 'Kidneybeans', 'lentil', 'Maize', 'Mango', 'Mothbeans', 'Mungbeans', 'Muskmelon', 'Orange', 'Papaya', 'Pigeonpeas', 'Pomegranate', 'Rice', 'Watermelon']
+        predicted_crop = crop_names[predicted_crop_index]
+        if selected_language == "Hindi":
+            predicted_crop = english_to_hindi(predicted_crop)
         st.subheader("Predicted Crop:")
         st.write(predicted_crop)
 
