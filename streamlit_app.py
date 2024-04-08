@@ -18,6 +18,8 @@ language_options = ["English", "Hindi"]
 col1, col2 = st.sidebar.columns(2)
 with col1:
     selected_language = st.radio("Select Language", language_options)
+with col2:
+    selected_language = st.radio("Select Language", language_options)
 
 # Define page options
 page_options = ["Crop Prediction", "Crop Details"]
