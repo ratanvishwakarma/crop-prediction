@@ -61,36 +61,20 @@ def crop_prediction():
     ph = float(st.number_input('Ph', 0, 14))
 
     # Button to trigger crop prediction
-    #btn = st.button("Predict Crop")
+    btn = st.button("Predict Crop")
     
   # Perform prediction when the button is clicked
-    #if btn:
-       # if N == 0 and P == 0 and K == 0 and temperature == 0 and humidity == 0 and ph == 0:
-            #st.error("Cannot grow crops with all input values set to zero.")
-        #else:
-            #pred = model.predict(np.array([N,P,K,temperature,humidity,ph]).reshape(1,-1))
-           # print(pred)
-            #print(np.array(pred))
-            #pred = np.array([*pred])
-           # print(pred)
-            #st.subheader(*pred)
-           # if selected_language == "Hindi":
-              #  pred = english_to_hindi(*pred)
-           # st.subheader(pred)
-
-# Button to trigger crop prediction
-    english_prediction = st.button("Predict Crop (English)")
-
-    # Button to trigger crop prediction in Hindi
-    hindi_prediction = st.button("फसल की भविष्यवाणी करें (हिंदी)")
-
-    # Perform prediction when either button is clicked
-    if english_prediction or hindi_prediction:
+    if btn:
         if N == 0 and P == 0 and K == 0 and temperature == 0 and humidity == 0 and ph == 0:
             st.error("Cannot grow crops with all input values set to zero.")
         else:
             pred = model.predict(np.array([N,P,K,temperature,humidity,ph]).reshape(1,-1))
-            if hindi_prediction:
+            print(pred)
+            print(np.array(pred))
+            pred = np.array([*pred])
+            print(pred)
+            st.subheader(*pred)
+            if selected_language == "Hindi":
                 pred = english_to_hindi(*pred)
             st.subheader(pred)
 
