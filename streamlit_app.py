@@ -61,7 +61,7 @@ def crop_prediction():
     ph = float(st.number_input('Ph'))
 
     # Button to trigger crop prediction
-    btn = st.button("Predict Crop"))
+    btn = st.button("Predict Crop")
     
   # Perform prediction when the button is clicked
     if btn:
