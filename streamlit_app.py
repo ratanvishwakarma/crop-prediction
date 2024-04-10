@@ -61,16 +61,19 @@ def crop_prediction():
     ph = float(st.number_input('Ph'))
 
     # Button to trigger crop prediction
-    btn = st.button("Predict Crop")
-
+    btn = st.button("Predict Crop"))
+    
   # Perform prediction when the button is clicked
     if btn:
-        pred = model.predict(np.array([N,P,K,temperature,humidity,ph]).reshape(1,-1))
-        print(pred)
-        print(np.array(pred))
-        pred = np.array([*pred])
-        print(pred)
-        st.subheader(*pred)
+        if N == 0 and P == 0 and K == 0 and temperature == 0 and humidity == 0 and ph == 0:
+            st.error("Cannot grow crops with all input values set to zero.")
+        else:
+            pred = model.predict(np.array([N,P,K,temperature,humidity,ph]).reshape(1,-1))
+            print(pred)
+            print(np.array(pred))
+            pred = np.array([*pred])
+            print(pred)
+            st.subheader(*pred)
 
 
 def crop_details():
