@@ -48,7 +48,7 @@ def english_to_hindi(english_crop):
         "Rice": "चावल",
         "Watermelon": "तरबूज"
     }
-    return crop_mapping.get(english_crop, crop_mapping)
+    return crop_mapping.get(english_crop, "Unknown")
 
 # Define functions for each page
 def crop_prediction():
