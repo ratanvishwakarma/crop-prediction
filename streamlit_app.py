@@ -54,11 +54,11 @@ def english_to_hindi(english_crop):
 def crop_prediction():
     # Input fields for user to provide data
     N = float(st.number_input('Nitrogen', 0, 1000))
-    P = float(st.number_input('Phosphorus', 0, 1000))
-    K = float(st.number_input('Potassium', 0, 1000))
-    temperature = float(st.number_input('Temperature', 0, 100))
-    humidity = float(st.number_input('Humidity', 0, 100))
-    ph = float(st.number_input('Ph', 0, 14))
+    P = float(st.number_input('Phosphorus', 3, 1000))
+    K = float(st.number_input('Potassium', 3, 1000))
+    temperature = float(st.number_input('Temperature', 10, 100))
+    humidity = float(st.number_input('Humidity', 10, 100))
+    ph = float(st.number_input('Ph', 2, 14))
 
     # Button to trigger crop prediction
     btn = st.button("Predict Crop")
