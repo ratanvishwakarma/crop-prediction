@@ -56,9 +56,9 @@ def crop_prediction():
     N = float(st.number_input('Nitrogen'))
     P = float(st.number_input('Phosphorus'))
     K = float(st.number_input('Potassium'))
-    temperature = float(st.number_input('Temperature', 10, 100))
-    humidity = float(st.number_input('Humidity', 10, 100))
-    ph = float(st.number_input('Ph', 2, 14))
+    temperature = float(st.number_input('Temperature'))
+    humidity = float(st.number_input('Humidity'))
+    ph = float(st.number_input('Ph'))
 
     # Button to trigger crop prediction
     btn = st.button("Predict Crop")
