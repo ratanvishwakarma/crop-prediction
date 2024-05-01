@@ -74,11 +74,11 @@ def crop_prediction():
             pred = np.array([*pred])
             print(pred)
             st.subheader(*pred)
-            if selected_language == "Hindi":
-                hindi_pred = english_to_hindi(*pred)
-                st.subheader(hindi_pred)
-            else:
-                st.subheader(*pred)
+        if selected_language == "Hindi":
+            hindi_pred = english_to_hindi(*pred)
+            st.subheader(hindi_pred)
+        else:
+            st.subheader(*pred)
 
 
 def crop_details():
