@@ -67,6 +67,10 @@ def crop_prediction():
     humidity = float(st.number_input('Humidity', 0, 100))
     ph = float(st.number_input('Ph', 0, 14))
 
+     # Define language options
+    language_options = ["English", "Hindi"]
+    selected_language = st.selectbox("Select Language", language_options)
+
     # Button to trigger crop prediction
     btn = st.button("Predict Crop")
     
@@ -81,8 +85,9 @@ def crop_prediction():
             pred = np.array([*pred])
             print(pred)
             st.subheader(*pred)
-            translated_pred = english_to_hindi(*pred, selected_language)
-            st.subheader(translated_pred)
+          if selected_language == "Hindi":
+                pred = english_to_hindi(pred)
+            st.subheader(f"The recommended crop for the given parameters is: {pred}")
 
 def crop_details():
     # Table section
