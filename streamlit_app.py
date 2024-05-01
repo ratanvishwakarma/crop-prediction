@@ -48,7 +48,10 @@ def english_to_hindi(english_crop):
         "Rice": "चावल",
         "Watermelon": "तरबूज"
     }
-    return crop_mapping.get(english_crop, "Unknown")
+    if selected_language == "Hindi":
+        return crop_mapping.get(english_crop, "Unknown")
+    else:
+        return english_crop
 
 # Define functions for each page
 def crop_prediction():
@@ -74,11 +77,11 @@ def crop_prediction():
             pred = np.array([*pred])
             print(pred)
             st.subheader(*pred)
-        if selected_language == "Hindi":
-            hindi_pred = english_to_hindi(*pred)
-            st.subheader(hindi_pred)
-        else:
-            st.subheader(*pred)
+    if selected_language == "Hindi":
+        hindi_pred = english_to_hindi(*pred)
+        st.subheader(hindi_pred)
+    else:
+        st.subheader(*pred)
 
 
 def crop_details():
