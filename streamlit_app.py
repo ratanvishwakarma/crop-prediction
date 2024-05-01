@@ -23,7 +23,7 @@ page_options = ["Crop Prediction", "Crop Details"]
 selected_page = st.sidebar.radio("Select Page", page_options)
 
 # Define function to convert English crop names to Hindi
-def english_to_hindi(english_crop):
+def english_to_hindi(english_crop, selected_language):
     crop_mapping = {
         "Apple": "सेब",
         "Banana": "केला",
@@ -48,7 +48,10 @@ def english_to_hindi(english_crop):
         "Rice": "चावल",
         "Watermelon": "तरबूज"
     }
-    return crop_mapping.get(english_crop, "Unknown")
+   if selected_language == "Hindi":
+        return crop_mapping.get(english_crop, "Unknown")
+    else:
+        return english_crop
 
 # Define functions for each page
 def crop_prediction():
@@ -74,6 +77,8 @@ def crop_prediction():
             pred = np.array([*pred])
             print(pred)
             st.subheader(*pred)
+            translated_pred = english_to_hindi(*pred, selected_language)
+            st.subheader(translated_pred)
 
 def crop_details():
     # Table section
