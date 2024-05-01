@@ -48,7 +48,7 @@ def english_to_hindi(english_crop, selected_language):
         "Rice": "चावल",
         "Watermelon": "तरबूज"
     }
-   if selected_language == "Hindi":
+ if selected_language == "Hindi":
         return crop_mapping.get(english_crop, "Unknown")
     else:
         return english_crop
