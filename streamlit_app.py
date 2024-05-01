@@ -75,8 +75,10 @@ def crop_prediction():
             print(pred)
             st.subheader(*pred)
             if selected_language == "Hindi":
-                pred = english_to_hindi(*pred)
-            st.subheader(pred)
+                hindi_pred = english_to_hindi(*pred)
+                st.subheader(hindi_pred)
+            else:
+                st.subheader(*pred)
 
 
 def crop_details():
