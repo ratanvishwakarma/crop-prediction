@@ -11,51 +11,9 @@ model = pickle.load(open('model.pkl','rb'))
 st.markdown("<h1 style='text-align: center;'>AMAA</h1>", unsafe_allow_html=True)
 st.markdown("<h3 style='text-align: center; color: grey;'>CROP PREDICTION SYSTEM🌱</h3>", unsafe_allow_html=True)
 
-# Define language options
-language_options = ["English", "Hindi"]
-
-# Display language options side by side
-col1, col2 = st.sidebar.columns(2)
-selected_language = col1.radio("Select Language", language_options)
-
 # Define page options
 page_options = ["Crop Prediction", "Crop Details"]
 selected_page = st.sidebar.radio("Select Page", page_options)
-
-# Define function to convert English crop names to Hindi
-def english_to_hindi(english_crop, selected_language):
-    crop_mapping = {
-        "Apple": "सेब",
-        "Banana": "केला",
-        "Blackgram": "काली उरद",
-        "Chickpea": "चना",
-        "Coconut": "नारियल",
-        "Coffee": "कॉफ़ी",
-        "Cotton": "कपास",
-        "Grapes": "अंगूर",
-        "Jute": "जूट",
-        "Kidneybeans": "राजमा",
-        "lentil": "मसूर",
-        "Maize": "मक्का",
-        "Mango": "आम",
-        "Mothbeans": "मोथ",
-        "Mungbeans": "मूंग",
-        "Muskmelon": "खरबूजा",
-        "Orange": "संतरा",
-        "Papaya": "पपीता",
-        "Pigeonpeas": "अरहर",
-        "Pomegranate": "अनार",
-        "Rice": "चावल",
-        "Watermelon": "तरबूज"
-    }
-    if selected_language == "Hindi"
-        hindi_crop = crop_mapping.get(english_crop)
-        if hindi_crop:
-            return hindi_crop
-        else:
-            return english_crop  # Return the English crop name if Hindi translation is not available
-    else:
-        return english_crop
 
 # Define functions for each page
 def crop_prediction():
@@ -66,10 +24,6 @@ def crop_prediction():
     temperature = float(st.number_input('Temperature', 0, 100))
     humidity = float(st.number_input('Humidity', 0, 100))
     ph = float(st.number_input('Ph', 0, 14))
-
-     # Define language options
-    language_options = ["English", "Hindi"]
-    selected_language = st.selectbox("Select Language", language_options)
 
     # Button to trigger crop prediction
     btn = st.button("Predict Crop")
@@ -85,9 +39,6 @@ def crop_prediction():
             pred = np.array([*pred])
             print(pred)
             st.subheader(*pred)
-          if selected_language == "Hindi":
-                pred = english_to_hindi(pred)
-            st.subheader(f"The recommended crop for the given parameters is: {pred}")
 
 def crop_details():
     # Table section
