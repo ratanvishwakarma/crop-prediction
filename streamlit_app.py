@@ -8,7 +8,6 @@ import sklearn
 model = pickle.load(open('model.pkl','rb'))
 
 # Define the title and description of your app
-st.markdown("<h1 style='text-align: center;'>AMAA</h1>", unsafe_allow_html=True)
 st.markdown("<h3 style='text-align: center; color: grey;'>CROP PREDICTION SYSTEM🌱</h3>", unsafe_allow_html=True)
 
 # Define page options
@@ -18,11 +17,11 @@ selected_page = st.sidebar.radio("Select Page", page_options)
 # Define functions for each page
 def crop_prediction():
     # Input fields for user to provide data
-    N = float(st.number_input('Nitrogen', 0))
     P = float(st.number_input('Phosphorus', 0))
+    N = float(st.number_input('Nitrogen', 0))
     K = float(st.number_input('Potassium', 0))
-    temperature = float(st.number_input('Temperature', 0, 100))
     humidity = float(st.number_input('Humidity', 0, 100))
+    temperature = float(st.number_input('Temperature', 0, 100))
     ph = float(st.number_input('Ph', 0, 14))
 
     # Button to trigger crop prediction
